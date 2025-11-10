@@ -48,7 +48,11 @@ function App() {
      {
       articoli.map(articolo => (
          <div key={articolo.id} className='card'>
-        <p>{articolo.titolo}</p>
+        <p>{articolo.titolo}</p> 
+        <span>
+        <button className='btn btn-danger'><i class="bi bi-trash" aria-hidden="true" ></i></button>
+        <button className='btn btn-primary'><i class="bi bi-pen" aria-hidden="true" ></i></button>
+        </span>
         </div>
       ))
      }
