@@ -28,7 +28,7 @@ function App() {
   function gestisciInvio(e) {
     e.preventDefault()
     
-    setArticolo((articoli) => [...articoli, {id: articoli.length + 1, titolo: nuovoArticolo}])
+    setArticolo((articoli) => [...articoli, {id: articoli.length + 1, titolo: titolo}])
 
     console.log(articoli);
     
