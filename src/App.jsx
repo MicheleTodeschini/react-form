@@ -22,13 +22,18 @@ function App() {
     }
   ]
 
+  const [articolo, setArticolo] = useState(articoli)
+  const [nuovoArticolo, setNuovoArticolo] = useState('')
+
+  function 
+
   return (
     <>
      <h1>I nostri titoli di giornale</h1>
-     <div className='form'>
-     <input type='text' placeholder='Aggiungi titolo' />
+     <form onSubmit={gestisciInvio}>
+     <input type='text' placeholder='Aggiungi titolo' value={nuovoArticolo} onChange={(e) => setNuovoArticolo(e.target.value)} />
       <button className='btn btn-primary'>Aggiungi giornale</button>
-     </div>
+     </form>
       <div className='container d-flex'>
        
      {
