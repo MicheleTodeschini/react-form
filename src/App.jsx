@@ -25,7 +25,10 @@ function App() {
   return (
     <>
      <h1>I nostri titoli di giornale</h1>
-     <input />
+     <div className='form'>
+     <input type='text' placeholder='Aggiungi titolo' />
+      <button className='btn btn-primary'>Aggiungi giornale</button>
+     </div>
       <div className='container d-flex'>
        
      {
