@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
 
-  const articoli = [
+  const lista = [
     {
       id: 1,
       titolo: 'Gestione dei rifiuti'
@@ -22,23 +22,32 @@ function App() {
     }
   ]
 
-  const [articolo, setArticolo] = useState(articoli)
-  const [nuovoArticolo, setNuovoArticolo] = useState('')
+  const [articoli, setArticolo] = useState(lista)
+  const [titolo, setTitolo] = useState('')
 
-  function 
+  function gestisciInvio(e) {
+    e.preventDefault()
+    
+    setArticolo((articoli) => [...articoli, {id: articoli.length + 1, titolo: nuovoArticolo}])
+
+    console.log(articoli);
+    
+    setTitolo('')
+
+  }
 
   return (
     <>
      <h1>I nostri titoli di giornale</h1>
      <form onSubmit={gestisciInvio}>
-     <input type='text' placeholder='Aggiungi titolo' value={nuovoArticolo} onChange={(e) => setNuovoArticolo(e.target.value)} />
+     <input type='text' placeholder='Aggiungi titolo' value={titolo} onChange={(e) => setTitolo(e.target.value)} />
       <button className='btn btn-primary'>Aggiungi giornale</button>
      </form>
-      <div className='container d-flex'>
+      <div className='container'>
        
      {
       articoli.map(articolo => (
-         <div className='card'>
+         <div key={articolo.id} className='card'>
         <p>{articolo.titolo}</p>
         </div>
       ))
